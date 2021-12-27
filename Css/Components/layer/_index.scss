@@ -19,16 +19,66 @@ li{
 
 
 .container{
-    width: 100%;
-    height: 100%;
-    @include sm(){
         width:90%;
         margin: auto;
-    }
 }
 
 
 svg{
     color: $mainColor;
     width:22px;
+}
+
+
+section:not(:first-of-type){
+    padding: {
+        top: 200px;
+        bottom: 200px;
+    }
+}
+
+
+.section-header{
+    width: fit-content;
+    margin: {
+        left:auto;
+        right:auto;
+        bottom:6rem;
+    };
+
+    > .content{
+        > .title{
+            padding: 0.5rem 1rem;
+            font: {
+                size: 2.5rem;
+            };
+            border: solid grey 1px;
+            position: relative;
+            transition:color $section-header-trans 100ms ;
+            &:before{
+                content:"";
+                @extend %section-header-out;
+                left: -15%;
+            }
+            &::after{
+                content:'';
+                @extend %section-header-out;
+                right: -15%;
+            }
+            &:hover{
+                color:white;
+            }
+            &:hover:before,
+            &:hover:after{
+                @extend %section-header-in;
+            }
+            &:hover:before{
+                left: 0;
+            }
+            &:hover:after{
+                right:0;
+            }
+        }
+    }
+    
 }

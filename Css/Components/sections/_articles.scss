@@ -1,0 +1,82 @@
+.outerarticles{
+    .content{
+        .boxs{
+                display:grid;
+                grid-template-columns: repeat(auto-fill,minmax(230px,1fr));
+                gap: 30px;
+            .box{
+                border-radius: 10px;
+                box-shadow: 0 1px 20px 0  $box-articles-shadow;
+                overflow: hidden;
+                transition:transform $section-header-trans;
+                cursor: pointer;
+                >{
+                    width:100%;
+                }
+                &:hover{
+                    transform:translateY(-5%);
+                    box-shadow: 0 1px 20px 0  $box-articles-shadow-hover;
+                    .footer{
+                        svg{
+                            animation-play-state: running;
+                        }
+                    }
+                }
+                .image{
+                    img{
+                        width: 100%;
+                    }
+                }
+                .box-content{
+                    padding:1rem;
+                    .title{
+                        h5{
+                            padding-bottom: 0.5rem;
+                            font: {
+                                size: 1.3rem;
+                            }
+                        }
+                    }
+                    .text-content{
+                        p{
+                            font: {
+                                size:1rem;
+                            };
+                            line-height:1.5rem;
+                            color: $pargraphColor;
+                        }
+                    }
+                    
+                }
+                .footer{
+                    padding: 1rem;
+                    border-top: solid $box-articles-shadow 1px;
+                    display:flex;
+                    justify-content:space-between;
+                    align-items: center;
+                    span{
+                        font: {
+                            weight:bold;
+                        }
+                        color:$mainColor;
+                    }
+                    svg{
+                        animation: arrow 500ms linear infinite;
+                        animation-play-state: paused;
+                        
+                    }
+                }
+            }
+        }
+    }
+}
+
+@keyframes arrow {
+    from{
+        transform:translateX(0);
+
+    }
+    to{
+        transform:translateX(40%);
+    }
+}

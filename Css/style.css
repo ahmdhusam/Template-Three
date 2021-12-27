@@ -1,3 +1,21 @@
+.section-header > .content > .title::after, .section-header > .content > .title:before {
+  background-color: #2196f3;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: all 500ms linear;
+  z-index: -1;
+}
+
+.section-header > .content > .title:hover:before, .section-header > .content > .title:hover:after {
+  width: 51%;
+  height: 100%;
+  border-radius: unset;
+}
+
 * {
   box-sizing: border-box;
   margin: 0%;
@@ -18,19 +36,49 @@ li {
 }
 
 .container {
-  width: 100%;
-  height: 100%;
-}
-@media (min-width: 600px) {
-  .container {
-    width: 90%;
-    margin: auto;
-  }
+  width: 90%;
+  margin: auto;
 }
 
 svg {
   color: #2196f3;
   width: 22px;
+}
+
+section:not(:first-of-type) {
+  padding-top: 200px;
+  padding-bottom: 200px;
+}
+
+.section-header {
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 6rem;
+}
+.section-header > .content > .title {
+  padding: 0.5rem 1rem;
+  font-size: 2.5rem;
+  border: solid grey 1px;
+  position: relative;
+  transition: color 500ms 100ms;
+}
+.section-header > .content > .title:before {
+  content: "";
+  left: -15%;
+}
+.section-header > .content > .title::after {
+  content: "";
+  right: -15%;
+}
+.section-header > .content > .title:hover {
+  color: white;
+}
+.section-header > .content > .title:hover:before {
+  left: 0;
+}
+.section-header > .content > .title:hover:after {
+  right: 0;
 }
 
 header {
@@ -318,6 +366,67 @@ header .header nav > ul li.headerouterlinks.otherlinks:hover .outheader {
   }
   100% {
     transform: translateY(0);
+  }
+}
+.outerarticles .content .boxs {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+  gap: 30px;
+}
+.outerarticles .content .boxs .box {
+  border-radius: 10px;
+  box-shadow: 0 1px 20px 0 rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 500ms;
+  cursor: pointer;
+}
+.outerarticles .content .boxs .box > {
+  width: 100%;
+}
+.outerarticles .content .boxs .box:hover {
+  transform: translateY(-5%);
+  box-shadow: 0 1px 20px 0 rgba(0, 0, 0, 0.2);
+}
+.outerarticles .content .boxs .box:hover .footer svg {
+  animation-play-state: running;
+}
+.outerarticles .content .boxs .box .image img {
+  width: 100%;
+}
+.outerarticles .content .boxs .box .box-content {
+  padding: 1rem;
+}
+.outerarticles .content .boxs .box .box-content .title h5 {
+  padding-bottom: 0.5rem;
+  font-size: 1.3rem;
+}
+.outerarticles .content .boxs .box .box-content .text-content p {
+  font-size: 1rem;
+  line-height: 1.5rem;
+  color: #666;
+}
+.outerarticles .content .boxs .box .footer {
+  padding: 1rem;
+  border-top: solid rgba(0, 0, 0, 0.1) 1px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.outerarticles .content .boxs .box .footer span {
+  font-weight: bold;
+  color: #2196f3;
+}
+.outerarticles .content .boxs .box .footer svg {
+  animation: arrow 500ms linear infinite;
+  animation-play-state: paused;
+}
+
+@keyframes arrow {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(40%);
   }
 }
 

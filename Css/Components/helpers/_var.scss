@@ -5,13 +5,35 @@ $hoverBG:#fafafa;
 $linksBorderColor:#e9e6e6;
 $pargraphColor:#666;
 $pargraphLineHeight:1.7rem;
+$section-header-trans:500ms;
+$box-articles-shadow:rgb(0 0 0 / 10%);
+$box-articles-shadow-hover:rgb(0 0 0 / 20%);
 
 
-// Mixin Var
+// Mixin Screen Width
 
 $screenWidth:(
     "sm":600px,
     "md":768px,
     "lg":992px,
     "xl":1200px,
-)
+);
+
+
+//inherits
+%section-header-out{
+    background-color:$mainColor;
+    width:10px;
+    height:10px;
+    border-radius: 50%;
+    position:absolute;
+    top: 50%;
+    transform:translateY(-50%);
+    transition:all $section-header-trans linear;
+    z-index: -1;
+};
+%section-header-in{
+    width:51%;
+    height:100%;
+    border-radius: unset;
+};
