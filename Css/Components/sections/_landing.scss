@@ -1,0 +1,131 @@
+.outerlanding{
+    position: relative;
+    height: calc(100vh - 73px);
+    &::before{
+        content: "";
+        position:absolute;
+        top: 0%;
+        left: 0%;
+        width: 100%;
+        height:100%;
+        background-color:#ececec;
+        clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%);
+        z-index: -1;
+    }
+    .landing{
+        height:100%;
+        display:flex;
+        align-items: center;
+        .landingtext{
+            padding: 1.9rem;
+            text-align: center;
+            @include sm(){
+                width:60%;
+                margin: auto;
+            }
+            @include lg(){
+                width:auto;
+                margin: none;
+                text-align: left;
+                padding: {
+                    left:0%;
+                    right: 0%;
+                }
+            }
+            h1{
+                font: {
+                    size: 1.6rem;
+                }
+                padding:1.2rem;
+                @include sm(){
+                    font: {
+                        size:2rem;
+                    }
+                }
+                @include lg(){
+                    font: {
+                        size:2.4rem;
+                    }
+                    padding-left: 0%;
+                }
+            }
+            p{
+                color:$pargraphColor ;
+                font: {
+                    size: 1.2rem;
+                }
+                line-height: $pargraphLineHeight;
+                @include lg(){
+                    font: {
+                        size: 1.6rem;
+                    }
+                    line-height: $pargraphLineHeight + 0.7;
+                }
+            }
+        }
+
+        .img{
+            display:none;
+            @include lg(){
+                display:block;
+            }
+            img{
+                width:100%;
+                height: 100%;
+                animation: {
+                    name: landingImg;
+                    duration: 2s;
+                    iteration-count: infinite;
+                    direction: alternate;
+                    timing-function: linear;
+                }
+            }
+        }
+    }
+    .godown{
+        position:absolute;
+        bottom: 10px;
+        left:calc(50% - 15px);
+        animation: {
+            name: goDown;
+            duration: 2.5s;
+            iteration-count: infinite;
+        }
+        svg{
+            width: 30px;
+            font: {
+                size: 2rem;
+                weight: bold;
+            }
+        }
+    }
+}
+
+
+@keyframes landingImg{
+    from{
+        transform: translateY(-5%);
+    }
+    to{
+        transform: translateY(5%);
+    }
+}
+
+@keyframes goDown {
+    0%,
+    70%{
+        transform:translateY(0)
+    }
+    80%{
+        transform:translateY(-30%)
+    }
+    85%{
+        transform:translateY(0)
+    }
+    90%{
+        transform:translateY(-15%)
+    }
+    100%{
+        transform:translateY(0)
+    }
+  }

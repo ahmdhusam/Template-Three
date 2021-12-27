@@ -1,0 +1,17 @@
+$mainColor:#2196f3;
+$paddingHeader:1rem;
+$sizeBorderOfHeaderLinks: 4px;
+$hoverBG:#fafafa;
+$linksBorderColor:#e9e6e6;
+$pargraphColor:#666;
+$pargraphLineHeight:1.7rem;
+
+
+// Mixin Var
+
+$screenWidth:(
+    "sm":600px,
+    "md":768px,
+    "lg":992px,
+    "xl":1200px,
+)

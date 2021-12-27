@@ -1,0 +1,13 @@
+//varibles
+@import "./Components/helpers/var";
+
+//mixin
+@import "./Components/helpers/mixin";
+
+//layers
+@import "./Components/layer/index";
+
+
+// Pages
+@import "./Components/sections/header";
+@import "./Components/sections/landing";

@@ -1,0 +1,182 @@
+header{
+    // background-color: grey;
+    box-shadow: 0 0 1px 0 black;
+    position: relative;
+    z-index: 1000;
+    .header{
+        text-align: center;
+
+        //screen
+        @include md(){
+            display:flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+
+        //LOGO
+        .logo{
+            h2{
+                padding: $paddingHeader;
+                padding-left: 0%;
+                color: $mainColor;
+                font: {
+                    size: 2rem;
+                }
+            }
+        }
+
+        //NavBar
+        nav{
+            > ul{
+                display:flex;
+                justify-content: center;
+                align-items: center;
+                @include md(){
+                    justify-content: space-evenly;
+                    align-items: center;
+                }
+                li.headerouterlinks{
+                    > a{
+                        color:black;
+                        position: relative;
+                        overflow: hidden;
+                        transition:color 300ms ease-out;
+                        padding: $paddingHeader - 0.5rem;
+                        //screen
+                        @include sm(){
+                            padding:$paddingHeader;
+                        }
+                        @include md(){
+                            font: {
+                                size: 1.15rem;
+                            }
+                            padding:$paddingHeader + 0.5rem;
+                            }
+
+                            &::before{
+                                content:"";
+                                position:absolute;
+                                left: 0%;
+                                top: 0;
+                                width: 0%;
+                                height: calc(100% - $sizeBorderOfHeaderLinks);
+                                border-bottom: solid $mainColor $sizeBorderOfHeaderLinks;
+                                transition: width 300ms ease-out;
+                            }
+                        &:hover::before{
+                            width:100%;
+                        }
+                        &:hover{
+                            color: $mainColor;
+                            background-color: $hoverBG;
+                        }
+                    }
+
+
+                    &.otherlinks{
+                        .outheader{
+                            opacity: 0;
+                            visibility: hidden;
+                            background-color: white;
+                            position:absolute;
+                            padding:1rem;
+                            top: 150%;
+                            left: 0%;
+                            width:100%;
+                            text-align: left;
+                            transition: top 300ms ease-out;
+                            box-shadow: 0 0 1px 0 grey;
+                            border-bottom:  solid $mainColor 2px;
+                            overflow:hidden;
+                            @include md(){
+                                padding: {
+                                    top: 1rem;
+                                    bottom:1rem;
+                                }
+                                height:330px;
+                            }
+                            @include lg(){
+                                display:flex;
+                                height: 350px;
+                                >*{
+                                    width:calc(100% / 2);
+                                }
+                            }
+                            @include xl(){
+                                column-gap:7rem
+                            }
+                            .img{
+                                display:none;
+                                padding:1rem;
+                                @include lg(){
+                                    display:block;
+                                }
+                                img{
+                                        width: 70%;
+                                        @include xl(){
+                                            width:100%;
+                                        }
+                                }
+                            }
+                            ul{
+                                display:flex;
+                                flex-direction: column;
+                                flex-wrap: wrap;
+                                height:100%;
+                                @include md(){
+                                    column-gap: 20px;
+                                }
+                                li{
+                                    &:not(:last-child){
+                                        a{
+                                            border-bottom: solid 1px $linksBorderColor;
+                                        }
+                                    }
+                                    @include md(){
+                                        &:nth-child(5){
+                                            a{
+                                                border-bottom: none;
+                                            }
+                                        }
+                                    }
+                                    a{
+                                        color:$mainColor;
+                                        padding:$paddingHeader;
+                                        font: {
+                                            weight:bold;
+                                            size:1.2rem;
+                                        }
+                                        &:hover{
+                                            background-color:$hoverBG;
+                                        }
+                                        > svg{
+                                            margin-right: 4px;
+                                        }
+                                        >*{
+                                            vertical-align: middle;
+                                        }
+                                    }
+                                }
+    
+                            }
+
+                            //screen
+                        @include md(){
+                            left: 5%;
+                            width:90%;
+                        }
+                        }
+                        &:hover .outheader{
+                            opacity: 1;
+                            visibility: visible;
+                            top:100%;
+                        }
+
+                    }
+                }
+            }
+        }
+    }
+
+}
