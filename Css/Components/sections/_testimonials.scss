@@ -1,0 +1,50 @@
+.outertestmonials{
+    background-color:$mainBGColor;
+    .testimonials{
+        .testimonials-boxs{
+            @include grid-boxs(300px);
+            .box{
+                position: relative;
+                background-color: white;
+                padding:1rem;
+                border-radius: 10px;
+                .image{
+                    position:absolute;
+                    top: calc( 70px / -2);
+                    right: -1px;
+                    width:100px;
+                    height:100px;
+                    border-radius: 50%;
+                    overflow: hidden;
+                    border: 10px solid $mainBGColor;
+                    img{
+                        width:100%;
+                    }
+                }
+                .box-content{
+                    > *{
+                        margin:5px 0;
+                    }
+                    .name{
+                        font-size: 1.5rem;
+                    }
+                    .title ,
+                    .content-text{
+                        color:$pargraphColor;
+                    }
+                    .rank{
+                        svg.h-5{
+                            color: gold;
+                        }
+                        svg.h-6{
+                            color: black;
+                        }
+                    }
+                    .content-text{
+                        line-height:1.3rem;
+                    }
+                }
+            }
+        }
+    }
+}
