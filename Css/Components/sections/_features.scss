@@ -1,0 +1,87 @@
+.outerfeatures{
+    .features{
+        .features-content{
+            .boxs{
+                @include grid-boxs(320px);
+                .box{
+                    @extend %box;
+                    &:hover .image::after{
+                        clip-path: polygon(0 50%, 0% 100%, 100% 100%);
+                    }
+                    .image{
+                        position: relative;
+                        overflow: hidden;
+                        &::before{
+                            content: "";
+                            @extend %layout;
+                            height: calc(100% - 3px);
+                        }
+                        &::after{
+                            content:"";
+                            @extend %layout;
+                            background-color: white;
+                            clip-path: polygon(100% 50%, 0% 100%, 100% 100%);
+                            transition:clip-path 300ms;
+                        }
+                        img{
+                            width:100%;
+                        }
+                    }
+                    .box-content{
+                        .title{
+                            width:fit-content;
+                            margin: 1rem auto;
+                            padding:1rem;
+                            position: relative;
+                            &::after{
+                                content:'';
+                                width:50%;
+                                height:5px;
+                                position:absolute;
+                                bottom:0;
+                                left: 50%;
+                                transform:translateX(-50%);
+                            }
+                            h4{
+                                font-size:2rem;
+                            }
+                        }
+                        .content{
+                            padding:2rem;
+                            p{
+                                text-align:center;
+                                line-height:1.8rem;
+                                color:$pargraphColor;
+                            }
+                        }
+                    }
+                    .footer{
+                        width:fit-content;
+                        margin:1rem auto;
+                        padding:1rem;
+                        button{
+                            padding:0.5rem 1rem;
+                            border-radius: 5px;
+                            cursor: pointer;
+                            position: relative;
+                            z-index: 1;
+                            &:hover{
+                                color:white;
+                            }
+                            &:hover::before{
+                                width:100%;
+                            }
+                            &::before{
+                                content:"";
+                                @extend %layout;
+                                width:0;
+                                z-index: -1;
+                                transition:width 200ms;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

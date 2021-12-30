@@ -17,10 +17,18 @@ li{
     list-style-type: none;
 }
 
+section{
+    position: relative;
+    z-index: 1;
+}
 
 .container{
-        width:90%;
-        margin: auto;
+    width:90%;
+    margin: auto;
+    height: 100%;
+    @include xl(){
+        width:60%;
+    }
 }
 
 
@@ -45,8 +53,9 @@ section:not(:first-of-type){
         right:auto;
         bottom:6rem;
     };
-
+    
     > .content{
+
         > .title{
             padding: 0.5rem 1rem;
             font: {
@@ -81,4 +90,32 @@ section:not(:first-of-type){
         }
     }
     
+}
+
+
+
+@each $key,$val in $layout-color {
+    .layout-#{$key}{
+        .image{
+            &::before{
+                background-color:$val;
+            }
+        }
+        .box-content{
+            .title{
+                &::after{
+                    background-color:$val;
+                }
+            }
+        }
+        .footer{
+            button{
+                color:$val;
+                border: 1px solid $val;
+                &::before{
+                    background-color:$val;
+                }
+            }
+        }
+    }
 }

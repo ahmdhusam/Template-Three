@@ -1,15 +1,11 @@
 .outerarticles{
     .content{
         .boxs{
-                display:grid;
-                grid-template-columns: repeat(auto-fill,minmax(230px,1fr));
-                gap: 30px;
+            @include grid-boxs(230px);
             .box{
+                @extend %box;
                 border-radius: 10px;
-                box-shadow: 0 1px 20px 0  $box-articles-shadow;
-                overflow: hidden;
                 transition:transform $section-header-trans;
-                cursor: pointer;
                 >{
                     width:100%;
                 }

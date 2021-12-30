@@ -1,0 +1,56 @@
+.outergallery{
+
+    background-color: $mainBGColor;
+    &::before{
+        content:"";
+        position:absolute;
+        top: 0;
+        left: 0;
+        height:30px;
+        width: 100%;
+        background-image: linear-gradient(
+            135deg, white 25%, transparent 25%), linear-gradient(
+            225deg, white 25%, transparent 25%);
+        background-size: 30px 30px;
+        z-index: 1;
+    }
+    .gallery-content{
+        .boxs{
+            @include grid-boxs(300px);
+            .box{
+                @extend %box;
+                background-color:white;
+                padding:1rem;
+                .image{
+                    overflow:hidden;
+                    position: relative;
+                    &::before{
+                        content: "";
+                        width: 100%;
+                        height: 100%;
+                        position:absolute;
+                        top: 0;
+                        left: 0;
+                        background-color:rgba(255, 255, 255, 0.2);
+                        transform:scale(0);
+                        z-index:1;
+                        transition:transform 200ms ease-out, background-color 0s 300ms;
+                    }
+                    &:hover::before{
+                        transform:scale(1);
+                        background-color: transparent;
+                    }
+                    &:hover img{
+                        transform:rotatez(5deg) scale(1.1);
+                    }
+                    img{
+                        width: 100%;
+                        transition:transform 100ms ease-in;
+                    }
+                }
+                
+            }
+        }
+        
+    }
+}

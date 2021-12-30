@@ -1,4 +1,5 @@
 $mainColor:#2196f3;
+$mainBGColor:#ececec;
 $paddingHeader:1rem;
 $sizeBorderOfHeaderLinks: 4px;
 $hoverBG:#fafafa;
@@ -16,7 +17,13 @@ $screenWidth:(
     "sm":600px,
     "md":768px,
     "lg":992px,
-    "xl":1200px,
+    "xl":1600px,
+);
+
+$layout-color:(
+    "red":rgb(244 64 54 / 60%),
+    "green":rgb(0 150 136 / 60%),
+    "blue":rgb(3 169 244 / 60%),
 );
 
 
@@ -32,8 +39,26 @@ $screenWidth:(
     transition:all $section-header-trans linear;
     z-index: -1;
 };
+
+
 %section-header-in{
     width:51%;
     height:100%;
     border-radius: unset;
 };
+
+
+%box{
+    box-shadow: 0 1px 20px 0  $box-articles-shadow;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+
+%layout{
+    width:100%;
+    height: 100%;
+    position:absolute;
+    top:0;
+    left:0;
+}
