@@ -1,3 +1,5 @@
+
+//Global
 $mainColor:#2196f3;
 $mainBGColor:#ececec;
 $paddingHeader:1rem;
@@ -7,8 +9,14 @@ $linksBorderColor:#e9e6e6;
 $pargraphColor:#666;
 $pargraphLineHeight:1.7rem;
 $section-header-trans:500ms;
+
+// Articles Section
 $box-articles-shadow:rgb(0 0 0 / 10%);
 $box-articles-shadow-hover:rgb(0 0 0 / 20%);
+
+// Team Members Section
+$teamBorderRadius:20px;
+$transitionDiur:300ms;
 
 
 // Mixin Screen Width

@@ -58,9 +58,10 @@ section:not(:first-of-type){
 
         > .title{
             padding: 0.5rem 1rem;
-            font: {
-                size: 2.5rem;
-            };
+            font-size: 1.5rem;
+            @include md(){
+                font-size: 2.5rem;
+        }
             border: solid grey 1px;
             position: relative;
             transition:color $section-header-trans 100ms ;

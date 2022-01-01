@@ -83,10 +83,15 @@ section:not(:first-of-type) {
 }
 .section-header > .content > .title {
   padding: 0.5rem 1rem;
-  font-size: 2.5rem;
+  font-size: 1.5rem;
   border: solid grey 1px;
   position: relative;
   transition: color 500ms 100ms;
+}
+@media (min-width: 768px) {
+  .section-header > .content > .title {
+    font-size: 2.5rem;
+  }
 }
 .section-header > .content > .title:before {
   content: "";
@@ -437,7 +442,7 @@ header .header nav > ul li.headerouterlinks.otherlinks:hover .outheader {
 .outerarticles .content .boxs {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
-  gap: 30px;
+  gap: 40px;
 }
 .outerarticles .content .boxs .box {
   border-radius: 10px;
@@ -509,7 +514,7 @@ header .header nav > ul li.headerouterlinks.otherlinks:hover .outheader {
 .outergallery .gallery-content .boxs {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 30px;
+  gap: 40px;
 }
 .outergallery .gallery-content .boxs .box {
   background-color: white;
@@ -546,7 +551,7 @@ header .header nav > ul li.headerouterlinks.otherlinks:hover .outheader {
 .outerfeatures .features .features-content .boxs {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-  gap: 30px;
+  gap: 40px;
 }
 .outerfeatures .features .features-content .boxs .box:hover .image::after {
   clip-path: polygon(0 50%, 0% 100%, 100% 100%);
@@ -625,7 +630,7 @@ header .header nav > ul li.headerouterlinks.otherlinks:hover .outheader {
 .outertestmonials .testimonials .testimonials-boxs {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 30px;
+  gap: 40px;
 }
 .outertestmonials .testimonials .testimonials-boxs .box {
   position: relative;
@@ -664,6 +669,84 @@ header .header nav > ul li.headerouterlinks.otherlinks:hover .outheader {
 }
 .outertestmonials .testimonials .testimonials-boxs .box .box-content .content-text {
   line-height: 1.3rem;
+}
+
+.outerteam-members .team-members .team-members-boxs {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+  gap: 40px;
+}
+.outerteam-members .team-members .team-members-boxs .box {
+  position: relative;
+  padding-top: 4rem;
+  padding-bottom: 2rem;
+  border-radius: 20px;
+  overflow: hidden;
+}
+.outerteam-members .team-members .team-members-boxs .box:hover::after {
+  width: 80%;
+}
+.outerteam-members .team-members .team-members-boxs .box:hover .header .image img {
+  filter: grayscale(100%);
+}
+.outerteam-members .team-members .team-members-boxs .box:hover .footer .name {
+  color: #666;
+}
+.outerteam-members .team-members .team-members-boxs .box::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  width: 80%;
+  height: 100%;
+  right: 0;
+  top: 0;
+  background-color: #eeeeee50;
+  border-radius: 20px;
+}
+.outerteam-members .team-members .team-members-boxs .box::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  width: 0%;
+  height: 100%;
+  right: 0;
+  top: 0;
+  background-color: #ececec;
+  border-radius: 20px;
+  transition: width 300ms;
+}
+.outerteam-members .team-members .team-members-boxs .box .header {
+  display: flex;
+}
+.outerteam-members .team-members .team-members-boxs .box .header .image {
+  border-radius: 20px;
+  overflow: hidden;
+}
+.outerteam-members .team-members .team-members-boxs .box .header .image img {
+  width: 100%;
+  transition: filter 300ms;
+}
+.outerteam-members .team-members .team-members-boxs .box .header .icons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 1.2rem;
+}
+.outerteam-members .team-members .team-members-boxs .box .header .icons svg {
+  color: #666;
+}
+.outerteam-members .team-members .team-members-boxs .box .footer {
+  display: flex;
+  flex-direction: column;
+  padding-inline-start: 6rem;
+}
+.outerteam-members .team-members .team-members-boxs .box .footer .name {
+  color: #2196f3;
+  font-size: 1.7rem;
+}
+.outerteam-members .team-members .team-members-boxs .box .footer .content {
+  color: #666;
 }
 
 /*# sourceMappingURL=style.css.map */

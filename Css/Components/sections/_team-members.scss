@@ -1,0 +1,89 @@
+.outerteam-members{
+    .team-members{
+        .team-members-boxs{
+            @include grid-boxs(230px);
+            .box{
+                position: relative;
+                padding: {
+                    top:4rem;
+                    bottom:2rem;
+                }
+                border-radius: $teamBorderRadius;
+                overflow: hidden;
+                &:hover::after{
+                    width: 80%;
+                }
+                &:hover{
+                    .header{
+                        .image{
+                            img{
+                                filter: grayscale(100%);
+                            }
+                        }
+                    }
+                    .footer{
+                        .name{
+                            color:$pargraphColor;
+                        }
+                    }
+                }
+                &::before{
+                    content:"";
+                    position:absolute;
+                    z-index: -1;
+                    width:80%;
+                    height:100%;
+                    right: 0;
+                    top: 0;
+                    background-color:#eeeeee50;
+                    border-radius: $teamBorderRadius;
+                }
+                &::after{
+                    content:"";
+                    position:absolute;
+                    z-index: -1;
+                    width:0%;
+                    height:100%;
+                    right: 0;
+                    top: 0;
+                    background-color:$mainBGColor;
+                    border-radius: $teamBorderRadius;
+                    transition:width $transitionDiur;
+                }
+                .header{
+                    display:flex;
+                    .image{
+                        border-radius: $teamBorderRadius;
+                        overflow: hidden;
+                        img{
+                            width:100%;
+                            transition:filter $transitionDiur;
+                        }
+                    }
+                    .icons{
+                        display:flex;
+                        justify-content:center;
+                        align-items: center;
+                        flex-direction:column;
+                        padding:1.2rem;
+                        svg{
+                            color:$pargraphColor;
+                        }
+                    }
+                }
+                .footer{
+                    display:flex;
+                    flex-direction: column;
+                    padding-inline-start: 6rem;
+                    .name{
+                        color:$mainColor;
+                        font-size: 1.7rem;
+                    }
+                    .content{
+                        color: $pargraphColor;
+                    }
+                }
+            }
+        }
+    }
+}
