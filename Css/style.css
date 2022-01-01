@@ -673,7 +673,7 @@ header .header nav > ul li.headerouterlinks.otherlinks:hover .outheader {
 
 .outerteam-members .team-members .team-members-boxs {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: 40px;
 }
 .outerteam-members .team-members .team-members-boxs .box {
@@ -719,8 +719,8 @@ header .header nav > ul li.headerouterlinks.otherlinks:hover .outheader {
   display: flex;
 }
 .outerteam-members .team-members .team-members-boxs .box .header .image {
-  border-radius: 20px;
   overflow: hidden;
+  border-radius: 20px;
 }
 .outerteam-members .team-members .team-members-boxs .box .header .image img {
   width: 100%;

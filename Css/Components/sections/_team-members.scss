@@ -1,7 +1,7 @@
 .outerteam-members{
     .team-members{
         .team-members-boxs{
-            @include grid-boxs(230px);
+            @include grid-boxs(300px);
             .box{
                 position: relative;
                 padding: {
@@ -53,8 +53,8 @@
                 .header{
                     display:flex;
                     .image{
-                        border-radius: $teamBorderRadius;
                         overflow: hidden;
+                        border-radius: $teamBorderRadius;
                         img{
                             width:100%;
                             transition:filter $transitionDiur;
