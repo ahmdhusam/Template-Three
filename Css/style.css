@@ -41,6 +41,17 @@
   z-index: 1;
 }
 
+.pro-reactjs::before, .pro-js::before, .pro-sass::before, .pro-css::before, .pro-html::before {
+  padding: 0.1rem;
+  font-size: 0.6rem;
+  border: solid #666 1px;
+  border-radius: 5px;
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
 * {
   box-sizing: border-box;
   margin: 0%;
@@ -162,6 +173,41 @@ section:not(:first-of-type) {
 }
 .layout-blue .footer button::before {
   background-color: rgba(3, 169, 244, 0.6);
+}
+
+.pro-html::before {
+  content: "80%";
+}
+.pro-html + .progress {
+  background-image: linear-gradient(to right, #2196f3 80%, transparent 80%);
+}
+
+.pro-css::before {
+  content: "85%";
+}
+.pro-css + .progress {
+  background-image: linear-gradient(to right, #2196f3 85%, transparent 85%);
+}
+
+.pro-sass::before {
+  content: "80%";
+}
+.pro-sass + .progress {
+  background-image: linear-gradient(to right, #2196f3 80%, transparent 80%);
+}
+
+.pro-js::before {
+  content: "75%";
+}
+.pro-js + .progress {
+  background-image: linear-gradient(to right, #2196f3 75%, transparent 75%);
+}
+
+.pro-reactjs::before {
+  content: "80%";
+}
+.pro-reactjs + .progress {
+  background-image: linear-gradient(to right, #2196f3 80%, transparent 80%);
 }
 
 header {
@@ -838,6 +884,49 @@ header .header nav > ul li.headerouterlinks.otherlinks:hover .outheader {
   padding: 1rem;
   color: #2196f3;
   font-size: 1.2rem;
+}
+
+@media (min-width: 992px) {
+  .outerour-skills .our-skills .our-skills-content {
+    display: flex;
+  }
+}
+.outerour-skills .our-skills .our-skills-content .image {
+  display: none;
+}
+@media (min-width: 768px) {
+  .outerour-skills .our-skills .our-skills-content .image {
+    display: block;
+  }
+}
+@media (min-width: 992px) {
+  .outerour-skills .our-skills .our-skills-content .image {
+    width: 45%;
+  }
+}
+.outerour-skills .our-skills .our-skills-content .image img {
+  width: 100%;
+}
+@media (min-width: 992px) {
+  .outerour-skills .our-skills .our-skills-content .progresss {
+    width: 55%;
+  }
+}
+.outerour-skills .our-skills .our-skills-content .progresss .pro-content {
+  position: relative;
+  margin: 1rem 0;
+  font-weight: bold;
+}
+.outerour-skills .our-skills .our-skills-content .progresss .pro-content:first-child {
+  margin-top: 0;
+}
+@media (min-width: 992px) {
+  .outerour-skills .our-skills .our-skills-content .progresss .pro-content {
+    font-size: 1.3rem;
+  }
+}
+.outerour-skills .our-skills .our-skills-content .progresss .progress {
+  height: 2rem;
 }
 
 /*# sourceMappingURL=style.css.map */

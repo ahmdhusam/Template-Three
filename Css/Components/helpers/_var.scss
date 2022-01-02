@@ -35,6 +35,14 @@ $layout-color:(
 );
 
 
+$progress:(
+    "html":80%,
+    "css":85%,
+    "sass":80%,
+    "js":75%,
+    "reactjs":80%
+);
+
 //inherits
 %section-header-out{
     background-color:$mainColor;
@@ -83,4 +91,16 @@ $layout-color:(
         225deg, white 25%, transparent 25%);
     background-size: 30px 30px;
     z-index: 1;
+}
+
+
+%pro-before{
+    padding:0.1rem;
+    font-size: 0.6rem;
+    border:solid $pargraphColor 1px;
+    border-radius: 5px;
+    position:absolute;
+    right: 0;
+    top: 50%;
+    transform:translateY(-50%);
 }

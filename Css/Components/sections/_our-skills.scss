@@ -1,0 +1,40 @@
+.outerour-skills{
+    .our-skills{
+        .our-skills-content{
+            @include lg(){
+                display:flex;
+            }
+            .image{
+                display:none;
+                @include md(){
+                    display:block;
+                }
+                @include lg(){
+                    width:45%;
+                }
+                img{
+                    width:100%;
+                }
+            }
+            .progresss{
+                @include lg(){
+                    width:55%;
+                }
+                .pro-content{
+                    &:first-child{
+                        margin-top: 0;
+                    }
+                    position: relative;
+                    margin: 1rem 0 ;
+                    font-weight: bold;
+                    @include lg(){
+                        font-size: 1.3rem;
+                    }
+                }
+                .progress{
+                    height: 2rem;
+                }
+            }
+        }
+    }
+}

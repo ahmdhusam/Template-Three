@@ -120,3 +120,18 @@ section:not(:first-of-type){
         }
     }
 }
+
+
+
+@each $key,$val in $progress {
+    .pro-#{$key}{
+        &::before{
+            content:"#{$val}";
+            @extend %pro-before;
+        }
+        + .progress{
+            background-image: linear-gradient(to right, $mainColor $val,transparent $val);
+        }
+    }
+
+}
