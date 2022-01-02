@@ -22,7 +22,7 @@
   cursor: pointer;
 }
 
-.outerservices .services .services-boxs .box .footer .number:after, .outerservices .services .services-boxs .box .footer .number:before, .outerfeatures .features .features-content .boxs .box .footer button::before, .outerfeatures .features .features-content .boxs .box .image::after, .outerfeatures .features .features-content .boxs .box .image::before {
+.outerhowitworks .how-it-work .how-it-work-content .work-steps .box:before, .outerservices .services .services-boxs .box .footer .number:after, .outerservices .services .services-boxs .box .footer .number:before, .outerfeatures .features .features-content .boxs .box .footer button::before, .outerfeatures .features .features-content .boxs .box .image::after, .outerfeatures .features .features-content .boxs .box .image::before {
   width: 100%;
   height: 100%;
   position: absolute;
@@ -178,12 +178,22 @@ section:not(:first-of-type) {
 .pro-html::before {
   content: "80%";
 }
+@media (min-width: 768px) {
+  .pro-html::before {
+    font-size: 0.9rem;
+  }
+}
 .pro-html + .progress {
   background-image: linear-gradient(to right, #2196f3 80%, transparent 80%);
 }
 
 .pro-css::before {
   content: "85%";
+}
+@media (min-width: 768px) {
+  .pro-css::before {
+    font-size: 0.9rem;
+  }
 }
 .pro-css + .progress {
   background-image: linear-gradient(to right, #2196f3 85%, transparent 85%);
@@ -192,6 +202,11 @@ section:not(:first-of-type) {
 .pro-sass::before {
   content: "80%";
 }
+@media (min-width: 768px) {
+  .pro-sass::before {
+    font-size: 0.9rem;
+  }
+}
 .pro-sass + .progress {
   background-image: linear-gradient(to right, #2196f3 80%, transparent 80%);
 }
@@ -199,12 +214,22 @@ section:not(:first-of-type) {
 .pro-js::before {
   content: "75%";
 }
+@media (min-width: 768px) {
+  .pro-js::before {
+    font-size: 0.9rem;
+  }
+}
 .pro-js + .progress {
   background-image: linear-gradient(to right, #2196f3 75%, transparent 75%);
 }
 
 .pro-reactjs::before {
   content: "80%";
+}
+@media (min-width: 768px) {
+  .pro-reactjs::before {
+    font-size: 0.9rem;
+  }
 }
 .pro-reactjs + .progress {
   background-image: linear-gradient(to right, #2196f3 80%, transparent 80%);
@@ -927,6 +952,105 @@ header .header nav > ul li.headerouterlinks.otherlinks:hover .outheader {
 }
 .outerour-skills .our-skills .our-skills-content .progresss .progress {
   height: 2rem;
+}
+
+.outerhowitworks {
+  background-color: #ececec;
+}
+.outerhowitworks .how-it-work .how-it-work-content {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+@media (min-width: 992px) {
+  .outerhowitworks .how-it-work .how-it-work-content {
+    flex-direction: row;
+  }
+}
+@media (min-width: 992px) {
+  .outerhowitworks .how-it-work .how-it-work-content .image {
+    width: 45%;
+  }
+}
+.outerhowitworks .how-it-work .how-it-work-content .image img {
+  width: 100%;
+}
+@media (min-width: 992px) {
+  .outerhowitworks .how-it-work .how-it-work-content .work-steps {
+    width: 55%;
+  }
+}
+.outerhowitworks .how-it-work .how-it-work-content .work-steps .box {
+  background-color: #f6f5f5;
+  padding: 3rem;
+  border: 2px solid white;
+  border-radius: 20px;
+  position: relative;
+  z-index: 1;
+}
+.outerhowitworks .how-it-work .how-it-work-content .work-steps .box:not(:first-child) {
+  margin-top: 10px;
+}
+@media (min-width: 768px) {
+  .outerhowitworks .how-it-work .how-it-work-content .work-steps .box {
+    display: flex;
+    align-items: center;
+  }
+}
+@media (min-width: 992px) {
+  .outerhowitworks .how-it-work .how-it-work-content .work-steps .box {
+    padding: 1rem;
+  }
+}
+.outerhowitworks .how-it-work .how-it-work-content .work-steps .box:hover::before {
+  transform: scale(1);
+}
+.outerhowitworks .how-it-work .how-it-work-content .work-steps .box:before {
+  content: "";
+  background-color: #ececec;
+  border-radius: inherit;
+  transform: scale(0);
+  transition: transform 500ms;
+  z-index: -1;
+}
+.outerhowitworks .how-it-work .how-it-work-content .work-steps .box .box-image {
+  text-align: center;
+}
+.outerhowitworks .how-it-work .how-it-work-content .work-steps .box .box-image img {
+  width: 30%;
+}
+@media (min-width: 768px) {
+  .outerhowitworks .how-it-work .how-it-work-content .work-steps .box .box-image {
+    width: 20%;
+  }
+  .outerhowitworks .how-it-work .how-it-work-content .work-steps .box .box-image img {
+    width: 100%;
+  }
+}
+@media (min-width: 992px) {
+  .outerhowitworks .how-it-work .how-it-work-content .work-steps .box .box-image {
+    width: 30%;
+  }
+  .outerhowitworks .how-it-work .how-it-work-content .work-steps .box .box-image img {
+    width: 80%;
+  }
+}
+.outerhowitworks .how-it-work .how-it-work-content .work-steps .box .content {
+  text-align: center;
+}
+@media (min-width: 768px) {
+  .outerhowitworks .how-it-work .how-it-work-content .work-steps .box .content {
+    text-align: start;
+    padding-inline-start: 2rem;
+  }
+}
+.outerhowitworks .how-it-work .how-it-work-content .work-steps .box .content .title {
+  font-size: 1.5rem;
+  margin: 1rem 0;
+}
+.outerhowitworks .how-it-work .how-it-work-content .work-steps .box .content p {
+  color: #666;
+  line-height: 1.9rem;
 }
 
 /*# sourceMappingURL=style.css.map */

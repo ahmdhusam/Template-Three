@@ -1,0 +1,90 @@
+.outerhowitworks{
+    background-color:$mainBGColor;
+    .how-it-work{
+        .how-it-work-content{
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+            @include lg(){
+                flex-direction: row;
+            }
+            .image{
+                @include lg(){
+                    width:45%;
+                }
+                img{
+                    width: 100%;
+                }
+            }
+            .work-steps{
+                @include lg(){
+                    width:55%;
+                }
+                .box{
+                    background-color:#f6f5f5;
+                    padding: 3rem;
+                    border: 2px solid white;
+                    border-radius: 20px;
+                    position: relative;
+                    z-index: 1;
+                    &:not(:first-child){
+                        margin-top: 10px;
+                    }
+                    @include md(){
+                        display:flex;
+                        align-items: center;
+                    }
+                    @include lg(){
+                        padding:1rem;
+                    }
+                    &:hover::before{
+                        transform: scale(1);
+                    }
+                    &:before{
+                        content: "";
+                        @extend %layout;
+                        background-color:$mainBGColor;
+                        border-radius: inherit;
+                        transform:scale(0);
+                        transition:transform 500ms;
+                        z-index: -1;
+                    }
+                    .box-image{
+                        text-align:center;
+                        img{
+                            width:30%;
+                        }
+                        @include md(){
+                            width:20%;
+                            img{
+                                width: 100%;
+                            }
+                        }
+                        @include lg(){
+                            width:30%;
+                            img{
+                                width:80%;
+                            }
+                        }
+                    }
+                    .content{
+                        text-align: center;
+                        @include md(){
+                            text-align: start;
+                            padding-inline-start:2rem ;
+                        }
+                        .title{
+                            font-size: 1.5rem;
+                            margin: 1rem 0;
+                            
+                        }
+                        p{
+                            color: $pargraphColor;
+                            line-height: 1.9rem;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
