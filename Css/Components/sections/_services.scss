@@ -1,0 +1,94 @@
+.outerservices{
+    position: relative;
+    background-color: $mainBGColor;
+    &::before{
+        content:"";
+        @extend %triangles;
+    }
+    .services{
+        .services-boxs{
+            @include grid-boxs(300px);
+            .box{
+                @extend %box;
+                background-color:white;
+                transition:transform 500ms;
+                position: relative;
+                &:hover{
+                    transform:translateY(-10%);
+                    box-shadow: 0 1px 20px 0  $box-articles-shadow-hover;
+
+                    &::before{
+                        width: 100%;
+                        left: 0;
+                    }
+                }
+                &::before{
+                    content: "";
+                    width: 0%;
+                    height:2px;
+                    background-color:$mainColor;
+                    position:absolute;
+                    left: 50%;
+                    top: 0;
+                    transition:width 500ms,left 500ms;
+                }
+                .box-content{
+                    padding:1.5rem;
+                    .icon{
+                        text-align:center;
+                        svg{
+                            color:rgb(102 102 102 / 30%);
+                            width:120px;
+                        }
+                    }
+                    .title{
+                        color:$mainColor;
+                        font-size: 1.7rem;
+                        text-align:center;
+                    }
+                }
+                .footer{
+                    display: flex;
+                    justify-content:space-between;
+                    align-items: center;
+                    background-image: linear-gradient(to right ,#eee 25%,white);
+                    overflow: hidden;
+                    .number{
+                        background-color:$mainColor;
+                        color: white;
+                        padding:0.5rem 1rem;
+                        font: {
+                            size:2rem;
+                            weight: bold;
+                        }
+                        position: relative;
+                        z-index: 1;
+                        &:before{
+                            content: "";
+                            @extend %layout;
+                            left:30%;
+                            background-color: $mainColor;
+                            z-index:-1;
+                            transform:skewX(333deg);
+                        }
+                        &:after{
+                            content: "";
+                            @extend %layout;
+                            left:100%;
+                            background-color:#d5d5d5;
+                            z-index:-2;
+                            transform:skewX(333deg);
+                        }
+                    }
+                    .details{
+                        text-transform: capitalize;
+                        padding:1rem;
+                        color: $mainColor;
+                        font-size: 1.2rem;
+                    }
+                }
+            }
+
+        }
+    }
+}

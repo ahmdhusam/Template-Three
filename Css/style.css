@@ -16,18 +16,29 @@
   border-radius: unset;
 }
 
-.outerfeatures .features .features-content .boxs .box, .outergallery .gallery-content .boxs .box, .outerarticles .content .boxs .box {
+.outerservices .services .services-boxs .box, .outerfeatures .features .features-content .boxs .box, .outergallery .gallery-content .boxs .box, .outerarticles .content .boxs .box {
   box-shadow: 0 1px 20px 0 rgba(0, 0, 0, 0.1);
   overflow: hidden;
   cursor: pointer;
 }
 
-.outerfeatures .features .features-content .boxs .box .footer button::before, .outerfeatures .features .features-content .boxs .box .image::after, .outerfeatures .features .features-content .boxs .box .image::before {
+.outerservices .services .services-boxs .box .footer .number:after, .outerservices .services .services-boxs .box .footer .number:before, .outerfeatures .features .features-content .boxs .box .footer button::before, .outerfeatures .features .features-content .boxs .box .image::after, .outerfeatures .features .features-content .boxs .box .image::before {
   width: 100%;
   height: 100%;
   position: absolute;
   top: 0;
   left: 0;
+}
+
+.outerservices::before, .outergallery::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 30px;
+  width: 100%;
+  background-image: linear-gradient(135deg, white 25%, transparent 25%), linear-gradient(225deg, white 25%, transparent 25%);
+  background-size: 30px 30px;
+  z-index: 1;
 }
 
 * {
@@ -498,18 +509,11 @@ header .header nav > ul li.headerouterlinks.otherlinks:hover .outheader {
   }
 }
 .outergallery {
+  position: relative;
   background-color: #ececec;
 }
 .outergallery::before {
   content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 30px;
-  width: 100%;
-  background-image: linear-gradient(135deg, white 25%, transparent 25%), linear-gradient(225deg, white 25%, transparent 25%);
-  background-size: 30px 30px;
-  z-index: 1;
 }
 .outergallery .gallery-content .boxs {
   display: grid;
@@ -747,6 +751,93 @@ header .header nav > ul li.headerouterlinks.otherlinks:hover .outheader {
 }
 .outerteam-members .team-members .team-members-boxs .box .footer .content {
   color: #666;
+}
+
+.outerservices {
+  position: relative;
+  background-color: #ececec;
+}
+.outerservices::before {
+  content: "";
+}
+.outerservices .services .services-boxs {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 40px;
+}
+.outerservices .services .services-boxs .box {
+  background-color: white;
+  transition: transform 500ms;
+  position: relative;
+}
+.outerservices .services .services-boxs .box:hover {
+  transform: translateY(-10%);
+  box-shadow: 0 1px 20px 0 rgba(0, 0, 0, 0.2);
+}
+.outerservices .services .services-boxs .box:hover::before {
+  width: 100%;
+  left: 0;
+}
+.outerservices .services .services-boxs .box::before {
+  content: "";
+  width: 0%;
+  height: 2px;
+  background-color: #2196f3;
+  position: absolute;
+  left: 50%;
+  top: 0;
+  transition: width 500ms, left 500ms;
+}
+.outerservices .services .services-boxs .box .box-content {
+  padding: 1.5rem;
+}
+.outerservices .services .services-boxs .box .box-content .icon {
+  text-align: center;
+}
+.outerservices .services .services-boxs .box .box-content .icon svg {
+  color: rgba(102, 102, 102, 0.3);
+  width: 120px;
+}
+.outerservices .services .services-boxs .box .box-content .title {
+  color: #2196f3;
+  font-size: 1.7rem;
+  text-align: center;
+}
+.outerservices .services .services-boxs .box .footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-image: linear-gradient(to right, #eee 25%, white);
+  overflow: hidden;
+}
+.outerservices .services .services-boxs .box .footer .number {
+  background-color: #2196f3;
+  color: white;
+  padding: 0.5rem 1rem;
+  font-size: 2rem;
+  font-weight: bold;
+  position: relative;
+  z-index: 1;
+}
+.outerservices .services .services-boxs .box .footer .number:before {
+  content: "";
+  left: 30%;
+  background-color: #2196f3;
+  z-index: -1;
+  transform: skewX(333deg);
+}
+.outerservices .services .services-boxs .box .footer .number:after {
+  content: "";
+  left: 100%;
+  background-color: #d5d5d5;
+  z-index: -2;
+  transform: skewX(333deg);
+}
+.outerservices .services .services-boxs .box .footer .details {
+  text-transform: capitalize;
+  padding: 1rem;
+  color: #2196f3;
+  font-size: 1.2rem;
 }
 
 /*# sourceMappingURL=style.css.map */
