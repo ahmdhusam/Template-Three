@@ -1,0 +1,103 @@
+.outerlatest-events{
+    .latest-events{
+        .latest-events-content{
+            @include lg(){
+                display:flex;
+                justify-content: space-between;
+                align-items: center;
+                gap: 1rem;
+            }
+            .image{
+                display:none;
+                @include lg(){
+                    display:block;
+                    width:calc(100% / 2);
+                }
+                img{
+                    width: 100%;
+                    object-fit: cover;
+                }
+            }
+            .event-time{
+                text-align: center;
+                @include lg(){
+                    width:calc(100% / 2);
+                }
+                    .time-boxs{
+                        display:flex;
+                        justify-content:center;
+                        gap: 1rem;
+                        .box{
+                            border-radius: 0.5rem;
+                            border:1px solid grey;
+                            .time{
+                                padding:2rem 1rem;
+                                color: $mainColor;
+                                font-size: 2rem
+                            }
+                            .time-title{
+                                font-size:1.2rem;
+                                border-top: 1px solid grey;
+                                padding:0.5rem 1rem;
+                            }
+                        }
+                    }
+                h5.title{
+                    font-size: 2.5rem;
+                    margin-block: 1.5rem;
+                }
+                p{
+                    line-height:2rem;
+                    color: $pargraphColor;
+                }
+            }
+        }
+        .footer{
+            margin-block-start: 2rem;
+            form{
+                width:100%;
+                margin-inline: auto ;
+                text-align: center;
+                padding:1.5rem 3rem;
+                background-color:$mainBGColor;
+                @include lg(){
+                    width:50%;
+                    border-radius:3rem;
+                }
+                [type="email"]{
+                    width: 100%;
+                    margin-bottom: 1rem;
+                    padding: 1rem;
+                    outline: none;
+                    border:none;
+                    @include lg(){
+                        margin-bottom: unset;
+                        margin-right: 5px;
+                        width:70%;
+                    border-radius:3rem;
+                    }
+                    &:focus::placeholder{
+                        color: rgba(128, 128, 128, 0.4);
+                    }
+                }
+                [type="submit"]{
+                    width:100%;
+                    background-color:$mainColor;
+                    color: white;
+                    outline:none;
+                    border: none;
+                    padding: 1rem;
+                    cursor: pointer;
+                    @include lg(){
+                        width:fit-content;
+                        border-radius:3rem;
+                    }
+                    &:hover,
+                    &:focus{
+                        opacity: 0.8;
+                    }
+                }
+            }
+        }
+    }
+}

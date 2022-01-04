@@ -44,6 +44,7 @@
 .pro-reactjs::before, .pro-js::before, .pro-sass::before, .pro-css::before, .pro-html::before {
   padding: 0.1rem;
   font-size: 0.6rem;
+  color: #2196f3;
   border: solid #666 1px;
   border-radius: 5px;
   position: absolute;
@@ -1051,6 +1052,115 @@ header .header nav > ul li.headerouterlinks.otherlinks:hover .outheader {
 .outerhowitworks .how-it-work .how-it-work-content .work-steps .box .content p {
   color: #666;
   line-height: 1.9rem;
+}
+
+@media (min-width: 992px) {
+  .outerlatest-events .latest-events .latest-events-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+  }
+}
+.outerlatest-events .latest-events .latest-events-content .image {
+  display: none;
+}
+@media (min-width: 992px) {
+  .outerlatest-events .latest-events .latest-events-content .image {
+    display: block;
+    width: 50%;
+  }
+}
+.outerlatest-events .latest-events .latest-events-content .image img {
+  width: 100%;
+  object-fit: cover;
+}
+.outerlatest-events .latest-events .latest-events-content .event-time {
+  text-align: center;
+}
+@media (min-width: 992px) {
+  .outerlatest-events .latest-events .latest-events-content .event-time {
+    width: 50%;
+  }
+}
+.outerlatest-events .latest-events .latest-events-content .event-time .time-boxs {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+.outerlatest-events .latest-events .latest-events-content .event-time .time-boxs .box {
+  border-radius: 0.5rem;
+  border: 1px solid grey;
+}
+.outerlatest-events .latest-events .latest-events-content .event-time .time-boxs .box .time {
+  padding: 2rem 1rem;
+  color: #2196f3;
+  font-size: 2rem;
+}
+.outerlatest-events .latest-events .latest-events-content .event-time .time-boxs .box .time-title {
+  font-size: 1.2rem;
+  border-top: 1px solid grey;
+  padding: 0.5rem 1rem;
+}
+.outerlatest-events .latest-events .latest-events-content .event-time h5.title {
+  font-size: 2.5rem;
+  margin-block: 1.5rem;
+}
+.outerlatest-events .latest-events .latest-events-content .event-time p {
+  line-height: 2rem;
+  color: #666;
+}
+.outerlatest-events .latest-events .footer {
+  margin-block-start: 2rem;
+}
+.outerlatest-events .latest-events .footer form {
+  width: 100%;
+  margin-inline: auto;
+  text-align: center;
+  padding: 1.5rem 3rem;
+  background-color: #ececec;
+}
+@media (min-width: 992px) {
+  .outerlatest-events .latest-events .footer form {
+    width: 50%;
+    border-radius: 3rem;
+  }
+}
+.outerlatest-events .latest-events .footer form [type=email] {
+  width: 100%;
+  margin-bottom: 1rem;
+  padding: 1rem;
+  outline: none;
+  border: none;
+}
+@media (min-width: 992px) {
+  .outerlatest-events .latest-events .footer form [type=email] {
+    margin-bottom: unset;
+    margin-right: 5px;
+    width: 70%;
+    border-radius: 3rem;
+  }
+}
+.outerlatest-events .latest-events .footer form [type=email]:focus::placeholder {
+  color: rgba(128, 128, 128, 0.4);
+}
+.outerlatest-events .latest-events .footer form [type=submit] {
+  width: 100%;
+  background-color: #2196f3;
+  color: white;
+  outline: none;
+  border: none;
+  padding: 1rem;
+  cursor: pointer;
+}
+@media (min-width: 992px) {
+  .outerlatest-events .latest-events .footer form [type=submit] {
+    width: fit-content;
+    border-radius: 3rem;
+  }
+}
+.outerlatest-events .latest-events .footer form [type=submit]:hover, .outerlatest-events .latest-events .footer form [type=submit]:focus {
+  opacity: 0.8;
 }
 
 /*# sourceMappingURL=style.css.map */
