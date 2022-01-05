@@ -1,0 +1,126 @@
+.outerpricing-plan{
+    background-color:$mainBGColor;
+    .pricing-plan{
+        .pricing-plan-boxs{
+            @include grid-boxs(300px);
+            .box{
+                @extend %box;
+                background-color:white;
+                padding-block: 2rem;
+                position: relative;
+                z-index: 1;
+                > *:not(.pop){
+                    margin-inline: auto;
+                    &:not(:last-child , .icon){
+                        margin-bottom: 2rem;
+                    }
+                    &:not(.options){
+                        width:fit-content;
+                    }
+                }
+                &:hover{
+                    &::before,
+                    &::after{
+                        width:100%;
+                    }
+                }
+                &::before{
+                    content: "";
+                    position:absolute;
+                    top: 0;
+                    left: 0;
+                    z-index: -1;
+                    height:50%;
+                    width: 0%;
+                    background-color:rgba($mainBGColor,0.3);
+                    transition: width 500ms;
+                }
+                &::after{
+                    content: "";
+                    position:absolute;
+                    bottom: 0;
+                    right: 0;
+                    z-index: -1;
+                    height:50%;
+                    width: 0%;
+                    background-color:rgba($mainBGColor,0.3);
+                    transition: width 500ms;
+                }
+                .pop{
+                    display:none;
+                    position:absolute;
+                    top: 0;
+                    right: -20px;
+                    width:fit-content;
+                    color: white;
+                    background-color:$mainColor;
+                    padding:0.5rem 1rem;
+                    padding-inline-end:2rem;
+                    transform:rotateZ(90deg) translatex(35%);
+                    &::after{
+                        content: "";
+                        width:0;
+                        height: 0;
+                        position:absolute;
+                        top: 50%;
+                        right: -1px;
+                        transform: translateY(-50%);
+                        border: 1.2rem transparent solid;
+                        border-right-color: white;
+                    }
+                }
+                &.pro{
+                    transform:translateY(-1rem);
+                    .pop{
+                        display:block;
+                    }
+                }
+                .title{
+                    font-size: 2rem
+                }
+                .icon{
+                    svg{
+                        width:7rem;
+                    }
+                }
+                .price{
+                    text-align: center;
+                    h6{
+                        font-size: 3.5rem;
+                        color: $mainColor;
+                    }
+                    span{
+                        color: $pargraphColor;
+                    }
+                }
+                .options{
+                    .option{
+                        padding: 1rem;
+                        border-top: 1px $mainBGColor solid;
+                        > *{
+                            vertical-align: middle;
+                        }
+                    }
+                }
+                .btn{
+                    display:block;
+                    font: {
+                        size:1rem;
+                        weight: bold;
+                    }
+                    outline:none;
+                    border: 2px $mainColor solid;
+                    border-radius: 0.5rem;
+                    padding:1rem 2rem;
+                    color:$mainColor;
+                    background-color:white;
+                    cursor: pointer;
+                    &:hover{
+                        color: white;
+                        background-color:$mainColor;
+                    }
+                }
+            }
+        }
+    }
+}

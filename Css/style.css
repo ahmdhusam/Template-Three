@@ -16,7 +16,7 @@
   border-radius: unset;
 }
 
-.outerservices .services .services-boxs .box, .outerfeatures .features .features-content .boxs .box, .outergallery .gallery-content .boxs .box, .outerarticles .content .boxs .box {
+.outerpricing-plan .pricing-plan .pricing-plan-boxs .box, .outerservices .services .services-boxs .box, .outerfeatures .features .features-content .boxs .box, .outergallery .gallery-content .boxs .box, .outerarticles .content .boxs .box {
   box-shadow: 0 1px 20px 0 rgba(0, 0, 0, 0.1);
   overflow: hidden;
   cursor: pointer;
@@ -1086,25 +1086,46 @@ header .header nav > ul li.headerouterlinks.otherlinks:hover .outheader {
 .outerlatest-events .latest-events .latest-events-content .event-time .time-boxs {
   display: flex;
   justify-content: center;
-  gap: 1rem;
+  gap: 0.3rem;
+}
+@media (min-width: 992px) {
+  .outerlatest-events .latest-events .latest-events-content .event-time .time-boxs {
+    gap: 1rem;
+  }
 }
 .outerlatest-events .latest-events .latest-events-content .event-time .time-boxs .box {
   border-radius: 0.5rem;
   border: 1px solid grey;
 }
 .outerlatest-events .latest-events .latest-events-content .event-time .time-boxs .box .time {
-  padding: 2rem 1rem;
   color: #2196f3;
-  font-size: 2rem;
+  padding: 1.5rem 1rem;
+}
+@media (min-width: 992px) {
+  .outerlatest-events .latest-events .latest-events-content .event-time .time-boxs .box .time {
+    padding: 2rem 1rem;
+    font-size: 2rem;
+  }
 }
 .outerlatest-events .latest-events .latest-events-content .event-time .time-boxs .box .time-title {
-  font-size: 1.2rem;
+  font-size: 0.6rem;
   border-top: 1px solid grey;
-  padding: 0.5rem 1rem;
+  padding: 0.5rem;
+}
+@media (min-width: 992px) {
+  .outerlatest-events .latest-events .latest-events-content .event-time .time-boxs .box .time-title {
+    font-size: 1.2rem;
+    padding: 0.5rem 1rem;
+  }
 }
 .outerlatest-events .latest-events .latest-events-content .event-time h5.title {
-  font-size: 2.5rem;
+  font-size: 1.2rem;
   margin-block: 1.5rem;
+}
+@media (min-width: 768px) {
+  .outerlatest-events .latest-events .latest-events-content .event-time h5.title {
+    font-size: 2.5rem;
+  }
 }
 .outerlatest-events .latest-events .latest-events-content .event-time p {
   line-height: 2rem;
@@ -1161,6 +1182,123 @@ header .header nav > ul li.headerouterlinks.otherlinks:hover .outheader {
 }
 .outerlatest-events .latest-events .footer form [type=submit]:hover, .outerlatest-events .latest-events .footer form [type=submit]:focus {
   opacity: 0.8;
+}
+
+.outerpricing-plan {
+  background-color: #ececec;
+}
+.outerpricing-plan .pricing-plan .pricing-plan-boxs {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 40px;
+}
+.outerpricing-plan .pricing-plan .pricing-plan-boxs .box {
+  background-color: white;
+  padding-block: 2rem;
+  position: relative;
+  z-index: 1;
+}
+.outerpricing-plan .pricing-plan .pricing-plan-boxs .box > *:not(.pop) {
+  margin-inline: auto;
+}
+.outerpricing-plan .pricing-plan .pricing-plan-boxs .box > *:not(.pop):not(:last-child, .icon) {
+  margin-bottom: 2rem;
+}
+.outerpricing-plan .pricing-plan .pricing-plan-boxs .box > *:not(.pop):not(.options) {
+  width: fit-content;
+}
+.outerpricing-plan .pricing-plan .pricing-plan-boxs .box:hover::before, .outerpricing-plan .pricing-plan .pricing-plan-boxs .box:hover::after {
+  width: 100%;
+}
+.outerpricing-plan .pricing-plan .pricing-plan-boxs .box::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  height: 50%;
+  width: 0%;
+  background-color: rgba(236, 236, 236, 0.3);
+  transition: width 500ms;
+}
+.outerpricing-plan .pricing-plan .pricing-plan-boxs .box::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  z-index: -1;
+  height: 50%;
+  width: 0%;
+  background-color: rgba(236, 236, 236, 0.3);
+  transition: width 500ms;
+}
+.outerpricing-plan .pricing-plan .pricing-plan-boxs .box .pop {
+  display: none;
+  position: absolute;
+  top: 0;
+  right: -20px;
+  width: fit-content;
+  color: white;
+  background-color: #2196f3;
+  padding: 0.5rem 1rem;
+  padding-inline-end: 2rem;
+  transform: rotateZ(90deg) translatex(35%);
+}
+.outerpricing-plan .pricing-plan .pricing-plan-boxs .box .pop::after {
+  content: "";
+  width: 0;
+  height: 0;
+  position: absolute;
+  top: 50%;
+  right: -1px;
+  transform: translateY(-50%);
+  border: 1.2rem transparent solid;
+  border-right-color: white;
+}
+.outerpricing-plan .pricing-plan .pricing-plan-boxs .box.pro {
+  transform: translateY(-1rem);
+}
+.outerpricing-plan .pricing-plan .pricing-plan-boxs .box.pro .pop {
+  display: block;
+}
+.outerpricing-plan .pricing-plan .pricing-plan-boxs .box .title {
+  font-size: 2rem;
+}
+.outerpricing-plan .pricing-plan .pricing-plan-boxs .box .icon svg {
+  width: 7rem;
+}
+.outerpricing-plan .pricing-plan .pricing-plan-boxs .box .price {
+  text-align: center;
+}
+.outerpricing-plan .pricing-plan .pricing-plan-boxs .box .price h6 {
+  font-size: 3.5rem;
+  color: #2196f3;
+}
+.outerpricing-plan .pricing-plan .pricing-plan-boxs .box .price span {
+  color: #666;
+}
+.outerpricing-plan .pricing-plan .pricing-plan-boxs .box .options .option {
+  padding: 1rem;
+  border-top: 1px #ececec solid;
+}
+.outerpricing-plan .pricing-plan .pricing-plan-boxs .box .options .option > * {
+  vertical-align: middle;
+}
+.outerpricing-plan .pricing-plan .pricing-plan-boxs .box .btn {
+  display: block;
+  font-size: 1rem;
+  font-weight: bold;
+  outline: none;
+  border: 2px #2196f3 solid;
+  border-radius: 0.5rem;
+  padding: 1rem 2rem;
+  color: #2196f3;
+  background-color: white;
+  cursor: pointer;
+}
+.outerpricing-plan .pricing-plan .pricing-plan-boxs .box .btn:hover {
+  color: white;
+  background-color: #2196f3;
 }
 
 /*# sourceMappingURL=style.css.map */
