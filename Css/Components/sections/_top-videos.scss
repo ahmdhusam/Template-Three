@@ -1,0 +1,74 @@
+.outertop-videos{
+    .top-videos{
+        .top-videos-content{
+            box-shadow: 0 1px 20px 0  $box-articles-shadow;
+            padding:1px;
+            @include md(){
+                display:flex;
+            }
+            .top-videos-list{
+                background-color:rgba($mainBGColor,0.5);
+                @include md(){
+                    width:30%;
+                }
+                .title{
+                    display:flex;
+                    justify-content:space-between;
+                    padding: 1rem;
+                    h5{
+                        font-size:1rem;
+                        @include md(){
+                            font-size: 1.5rem;
+                        }
+                    }
+                    svg{
+                        color: black;
+                    }
+                }
+                ul.list{
+                    li{
+                        margin: 1px;
+                        background-color: white;
+                        padding:0.8rem;
+                        cursor: pointer;
+
+                        &:hover{
+                            opacity: 0.8;
+                            h6{
+                                color:$mainColor;
+                            }
+                        }
+
+                        h6{
+                            font-weight: 500;
+                            margin-bottom: 5px;
+                            @include md(){
+                                font-size:1rem;
+                            }
+                        }
+                        span{
+                            color:$pargraphColor;
+                        }
+                    }
+                }
+            }
+            .video{
+                background-color:$mainBGColor;
+                padding:0.5rem;
+                @include md(){
+                padding:1rem;
+                }
+                .video-image{
+                    img{
+                        width:100%;
+                        object-fit: cover;
+                    }
+                }
+                .videos-title{
+                    background-color:white;
+                    padding:1rem;
+                }
+            }
+        }
+    }
+}

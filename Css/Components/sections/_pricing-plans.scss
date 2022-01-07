@@ -32,7 +32,7 @@
                     z-index: -1;
                     height:50%;
                     width: 0%;
-                    background-color:rgba($mainBGColor,0.3);
+                    background-color:rgba($mainBGColor,0.5);
                     transition: width 500ms;
                 }
                 &::after{
@@ -43,7 +43,7 @@
                     z-index: -1;
                     height:50%;
                     width: 0%;
-                    background-color:rgba($mainBGColor,0.3);
+                    background-color:rgba($mainBGColor,0.5);
                     transition: width 500ms;
                 }
                 .pop{
@@ -114,6 +114,7 @@
                     padding:1rem 2rem;
                     color:$mainColor;
                     background-color:white;
+                    transition: background-color 500ms, color 500ms;
                     cursor: pointer;
                     &:hover{
                         color: white;
