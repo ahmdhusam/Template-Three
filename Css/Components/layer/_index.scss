@@ -96,27 +96,27 @@ section:not(:first-of-type){
 
 .have-dots{
     position: relative;
-    &::before{
-        content: "";
-        position:absolute;
-        left: 0;
-        bottom: 25%;
-        background-image: url("../imgs/dots.png");
-        background-size: cover;
-        background-repeat: no-repeat;
-        width: 200px;
-        height: 200px;
-    }
+    &::before,
     &::after{
         content: "";
         position:absolute;
-        right: 0;
-        top: 25%;
         background-image: url("../imgs/dots.png");
         background-size: cover;
         background-repeat: no-repeat;
         width: 200px;
         height: 200px;
+        display:none;
+        @include lg(){
+            display:block
+        }
+    }
+    &::before{
+        left: 0;
+        bottom: 25%;
+    }
+    &::after{
+        right: 0;
+        top: 25%;
     }
 }
 

@@ -1,0 +1,186 @@
+.outerour-awesome-state{
+    padding-bottom: 0 !important;
+    .our-awesome-state{
+        .our-awesome-state-content{
+            position: relative;
+            z-index: 1;
+            background-image: url("../imgs/stats.jpg");
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            padding-block:5rem;
+            &::before{
+                content: "";
+                @extend %layout;
+                background-color:rgba(white, 0.9);
+                z-index: -1;
+            }
+            > .title{
+                margin-block-end: 5rem;
+                h3{
+                    width:fit-content;
+                    margin-inline: auto;
+                    @include md(){
+                        font-size:2rem
+                    }
+                }
+            }
+            .content-boxs{
+                @include grid-boxs(250px);
+                .box{
+                    background-color:white;
+                    padding-block: 2rem;
+                    position: relative;
+                    >*{
+                        width: fit-content;
+                        margin-inline: auto;
+                    }
+
+                    &:hover,
+                    &:focus{
+                        &::before,
+                        &::after{
+                            height:100%;
+                        }
+                    }
+                    &::before,
+                    &::after{
+                        content: "";
+                        background-color:$mainColor;
+                        position:absolute;
+                        width:2px;
+                        height:0;
+                        transition:height 500ms;
+                    }
+                    &::before{
+                        left: -1px;
+                        bottom: 0;
+                    }
+                    &::after{
+                        right: -1px;
+                        top: 0;
+                    }
+                    .icon{
+                        svg{
+                        color:black;
+                        width:2.5rem;
+                        }
+                    }
+                    .number{
+                        font: {
+                            size:3rem;
+                            weight: bold;
+                        }
+                    }
+                    .title{
+                        color: $mainColor;
+                        font: {
+                            size: 1.5rem;
+                            style:italic;
+                            weight: bold;
+                        }
+                    }
+
+                }
+            }
+        }
+        .discount-content{
+
+            >*{
+                padding:2rem;
+            }
+            @include md(){
+                display:flex;
+                >*{
+                    width:50%;
+                }
+            }
+
+            .discount-definition{
+                position: relative;
+                z-index: 1;
+                background-image:url("../imgs/discount-background1.jpg");
+                animation: {
+                    name:changeDiscountBG;
+                    duration:10s;
+                    timing-function:linear;
+                    iteration-count: infinite;
+                }
+                &::before{
+                    content:"";
+                    @extend %layout;
+                    background-color:rgb(23 135 224 / 97%);
+                    z-index: -1;
+                }
+                >*:not(.image){
+                    width: fit-content;
+                    margin-inline: auto;
+                    color:white;
+                }
+                .title{
+                    font-size: 2rem;
+                    margin-block-end: 2rem;
+                }
+                p{
+                    text-align: center;
+                }
+                .image{
+                    margin-inline: auto;
+                    margin-block: 1rem;
+                    width:50%;
+                    img{
+                        width:100%;
+                    }
+                }
+            }
+            form.request{
+                display:flex;
+                flex-direction: column;
+                row-gap: 2rem;
+                align-items: center;
+                justify-content: center;
+                >*:not(.title){
+                    width:90%;
+                    @include md(){
+                        width: 60%;
+                    }
+                    padding: 1rem;
+                    border: none;
+                    &:focus{
+                        outline:none;
+                    }
+                    &:not([type="submit"]){
+                        border-bottom: 1px solid grey;
+                        background-color: rgba($mainBGColor,0.5);
+                    }
+                }
+                .title{
+                    font-size:2rem;
+                }
+                textarea{
+                    resize: none;
+                }
+                input[type=submit]{
+                    background-color:rgb(23 135 224 / 97%);
+                    color:white;
+                    font: {
+                        size:1rem;
+                        weight: bold;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+
+
+@keyframes changeDiscountBG{
+    0%, 100%{
+        background-image:url("../imgs/discount-background1.jpg");
+    }
+    50%{
+        background-image:url("../imgs/discount-background2.jpg");
+    }
+}
