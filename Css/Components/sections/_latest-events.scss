@@ -1,4 +1,4 @@
-.outerlatest-events{
+#latest-events{
     .latest-events{
         .latest-events-content{
             @include lg(){
@@ -33,6 +33,10 @@
                         .box{
                             border-radius: 0.5rem;
                             border:1px solid grey;
+
+                            >*{
+                                display:block;
+                            }
                             .time{
                                 color: $mainColor;
                                 padding: 1.5rem 1rem;

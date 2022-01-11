@@ -1,4 +1,4 @@
-.outerour-awesome-state{
+.outer--our-awesome-state{
     padding-bottom: 0 !important;
     .our-awesome-state{
         .our-awesome-state-content{
@@ -163,9 +163,14 @@
                 input[type=submit]{
                     background-color:rgb(23 135 224 / 97%);
                     color:white;
+                    cursor: pointer;
                     font: {
                         size:1rem;
                         weight: bold;
+                    }
+                    &:hover,
+                    &:active{
+                        opacity: 0.8;
                     }
                 }
             }

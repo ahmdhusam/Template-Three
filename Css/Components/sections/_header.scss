@@ -1,7 +1,8 @@
-header{
-    // background-color: grey;
+header#header{
+    background-color:white;
     box-shadow: 0 0 1px 0 black;
-    position: relative;
+    position: fixed;
+    width:100%;
     z-index: 1000;
     .header{
         text-align: center;
